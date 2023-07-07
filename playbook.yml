@@ -1,0 +1,4 @@
+
+- hosts: ondemand
+  roles:
+    - role: osc.open_ondemand

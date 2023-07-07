@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if podman ps --format '{{.Names}}' | grep rocky; then
+  # nothing to do, container is running
+  echo 'container already running'
+else
+  podman run -d --rm --name rocky rockylinux/rockylinux:8 /sbin/init
+fi
+
+ansible-playbook -i inventory.ini \
+  -e "@extra_vars.yml" \
+  playbook.yml \
