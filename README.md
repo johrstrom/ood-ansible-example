@@ -12,7 +12,16 @@ Install the role through galaxy with this command:
 ansible-galaxy install osc.open_ondemand
 ```
 
+## Running
 
+Use and insepect the `run` script to run this playbook against this inventory
+with the extra variables file.
+
+```
+./run
+```
+
+## Doesn't work out of the box
 
 It uses a container as the inventory host and `podman` to start
 that container. As such it doens't even fully work becuase the container
